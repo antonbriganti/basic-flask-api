@@ -5,7 +5,7 @@ RUN pip3 install -r requirements.txt
 FROM base as app 
 WORKDIR /app
 COPY ./src .
-CMD [ "python3", "main.py"]
+CMD [ "python3", "server.py"]
 
 FROM base as test
 WORKDIR /app
