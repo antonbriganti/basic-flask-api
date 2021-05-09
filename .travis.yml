@@ -5,4 +5,4 @@ jobs:
   include:
     - stage: 👋
       script:
-        - echo "hello world"
+        - echo "hello travis-ci.com"
