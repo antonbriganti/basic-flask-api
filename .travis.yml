@@ -1,8 +1,10 @@
 language: python
-python:
-  - "3.9"
+services:
+  - docker
 jobs:
   include:
-    - stage: 👋
+    - stage: build app 🔨
       script:
-        - echo "hello travis-ci.com"
+        - docker build . 
+    - stage: test app 🔧
+      script: ./ops/test.sh
