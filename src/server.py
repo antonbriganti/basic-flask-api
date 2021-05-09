@@ -1,4 +1,4 @@
-from flask import Flask, Response
+from flask import Flask, Response, jsonify
 
 app = Flask("anton-code-test")
 
@@ -7,6 +7,10 @@ def hello_world():
     response = Response("hello world", status=200)
     return response
 
+@app.route("/health")
+def health_check():
+    message = {"message": "healthy"}
+    return jsonify(message)
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0")
