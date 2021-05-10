@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/antonbriganti/basic-flask-api.svg?branch=main)](https://travis-ci.org/antonbriganti/basic-flask-api)
 
-## Application Overview
+## Application Overview 🖥
 
 ### Technologies used
 Basic web API, built in Python and Flask.
@@ -33,7 +33,7 @@ Run the included script, which will run the tests via `docker-compose`
 ./ops/test.sh
 ```
 
-## Build Pipeline Overview
+## Build Pipeline Overview 🛠
 Application is built and tested using Travis CI, which was used because it's free and configurable via code (YAML file)
 
 ### Steps included
@@ -48,6 +48,6 @@ If I were to deploy this, the pipeline would continue as follows:
 3. Publish image - Publish the docker image to a repository, tagging it with the build number, git commit SHA and `latest`
 4. Deploy application - Deploy to cloud service (heroku maybe?), using the build number for the image identifier, i.e. `anton-ops-test:10`. 
 
-## Thoughts and concerns on application
+## Thoughts and concerns on application 💭
 - Right now the version and description are hard coded in, but ideally in the future it would follow the same pattern that is used for passing in git commit SHA
 - The git commit SHA is being baked into the image itself via passing in argument. If the command used to pass it in fails, the build will still go ahead, using the default value noted in the Dockerfile. This means an incorrect value could be pushed out to "production", which is obviously bad
