@@ -4,6 +4,8 @@ services:
     build: 
       context: .
       target: app
+      args:
+        LATEST_COMMIT_SHA: ${LATEST_COMMIT_SHA}
     ports:
       - "5000:5000"
   test:

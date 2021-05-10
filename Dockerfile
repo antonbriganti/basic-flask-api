@@ -3,6 +3,8 @@ COPY requirements.txt requirements.txt
 RUN pip3 install -r requirements.txt
 
 FROM base as app 
+ARG LATEST_COMMIT_SHA="00000" 
+ENV COMMIT_SHA $LATEST_COMMIT_SHA
 WORKDIR /app
 COPY ./src .
 CMD [ "python3", "server.py"]

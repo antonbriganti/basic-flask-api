@@ -5,6 +5,6 @@ jobs:
   include:
     - stage: build app 🔨
       script:
-        - docker build . 
+        - ./ops/build.sh
     - stage: test app 🔧
       script: ./ops/test.sh
