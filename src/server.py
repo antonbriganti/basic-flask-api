@@ -5,18 +5,18 @@ app = Flask("anton-code-test")
 
 @app.route("/")
 def hello_world():
-    response = Response("hello world", status=200)
-    return response
+    hello_world_response = Response("hello world", status=200)
+    return hello_world_response
 
 @app.route("/health")
 def health_check():
-    message = {"message": "healthy"}
-    return jsonify(message)
+    health_check_message = {"message": "healthy"}
+    return jsonify(health_check_message)
 
 @app.route("/metadata")
-def metadata_endpoint():
-    metadata = {"version": "1.0.0", "description": "very basic flask app", "lastcommitsha": os.environ.get('COMMIT_SHA') }
-    return jsonify(metadata)
+def get_application_metadata():
+    metadata_message = {"version": "1.0.0", "description": "very basic flask app", "lastcommitsha": os.environ.get('COMMIT_SHA') }
+    return jsonify(metadata_message)
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0")
