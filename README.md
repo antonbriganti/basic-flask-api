@@ -1,4 +1,6 @@
-# MYOB Ops Code Test
+# basic-flask-api 
+
+This is actually an implementation of [a techincal test MYOB's O&A function uses](https://github.com/myob-oss/ops-technical-test) but I called it something different to make it less searchable
 
 [![Build Status](https://travis-ci.com/antonbriganti/basic-flask-api.svg?branch=main)](https://travis-ci.com/antonbriganti/basic-flask-api)
 
@@ -63,3 +65,4 @@ If I were to deploy this, the pipeline would continue as follows:
     - I did try doing it but I found it a little too complex to easily achieve due to the nature of multiple dependencies being introduced per dependency
     - It's probably not a big problem for a small app like this but I can see it being an issue if it got any larger
 - I didn't create a new image target for just linting due to the state my dependency management was in. I feel like I cheated but it does the job so I guess that's fine
+- A big dumb issue is Docker's rate limiting so my tests on the CI/CD may fail if too many pulls are done. This is out of my control.
