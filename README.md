@@ -51,8 +51,6 @@ Pretty basic setup:
 1. **Build step** - Used to make sure the docker image actually builds correctly (ensuring following failures will be relevant only to tests)
 2. **Test step** - Running tests using `docker-compose`. This was done to make sure the pipeline is using the exact setup that I have locally, as opposed to worrying about if the build agents have `python`, `pip`, etc.
 
-> I'd like to have a step 0 which is linting or some other code quality check. If you're seeing this, it means I didn't get to implement it before my deadline. 
-
 If I were to deploy this, the pipeline would continue as follows:
 
 3. **Publish image** - Publish the docker image to a repository, tagging it with the build number, git commit SHA and `latest`
