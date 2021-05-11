@@ -3,6 +3,9 @@ services:
   - docker
 jobs:
   include:
+    - stage: linting 🔎
+      script:
+        - ./ops/lint.sh
     - stage: build app 🔨
       script:
         - ./ops/build.sh
